@@ -65,8 +65,10 @@ class AccountsController extends AppController {
 				$this->Session->setFlash(__('The account could not be saved. Please, try again.'), 'flash/error');
 			}
 		}
+		$user_id = $this->Auth->user('id');
 		$users = $this->Account->User->find('list');
-		$this->set(compact('users'));
+		$accounts = $this->Account->find('list',array('conditions'=>array('Account.user_id'=>$user_id)));
+		$this->set(compact('users','accounts'));
 	}
 
 /**
@@ -92,8 +94,10 @@ class AccountsController extends AppController {
 			$options = array('conditions' => array('Account.' . $this->Account->primaryKey => $id));
 			$this->request->data = $this->Account->find('first', $options);
 		}
+		$user_id = $this->Auth->user('id');
 		$users = $this->Account->User->find('list');
-		$this->set(compact('users'));
+		$accounts = $this->Account->find('list',array('conditions'=>array('Account.user_id'=>$user_id)));
+		$this->set(compact('users','accounts'));
 	}
 
 /**
