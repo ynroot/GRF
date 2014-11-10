@@ -15,7 +15,7 @@
                     
                     -->
                     <div class="form-group">
-                        <?php echo $this->Form->input('account_id', array('class' => 'form-control')); ?>
+                        <?php echo $this->Form->input('account_id', array('class' => 'form-control','options'=>$accounts)); ?>
                     </div><!-- .form-group -->
                    
 
