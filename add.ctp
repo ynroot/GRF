@@ -1,5 +1,4 @@
-<?php $userId = $this->Session->read('Auth.User.id');
-?>
+
 <div class="row">
     <div class="col-xs-6 col-xs-offset-3">
         <div class="box box-primary">
